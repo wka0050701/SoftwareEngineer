@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 /**
  * 返回类
  *   版本:1.0
- *   作者:wka
  */
 public class Result {
     private Integer code;//响应码，1 代表成功; 0 代表失败

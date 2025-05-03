@@ -14,7 +14,6 @@ import java.util.Map;
 /**
  * 用户控制层
  *   版本:1.0
- *   作者:wka
  */
 @RestController
 @RequestMapping("/api/user")

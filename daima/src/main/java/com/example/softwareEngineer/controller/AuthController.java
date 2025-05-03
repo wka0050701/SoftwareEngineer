@@ -16,7 +16,6 @@ import java.util.regex.Pattern;
 /**
  * 注册登录层
  * 版本:1.0
- * 作者:wka
  */
 @RestController
 @RequestMapping("/api/auth")

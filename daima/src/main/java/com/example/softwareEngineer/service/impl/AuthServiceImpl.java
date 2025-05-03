@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 /**
  * Service实现类
  *   版本:1.0
- *   作者:wka
  */
 @Service
 public class AuthServiceImpl implements AuthService {

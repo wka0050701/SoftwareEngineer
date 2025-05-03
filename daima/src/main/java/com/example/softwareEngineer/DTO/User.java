@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 /**
  * 用户类
  *   版本:1.0
- *   作者:wka
  */
 public class User {
    private int userId;//用户id

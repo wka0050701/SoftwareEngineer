@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 用户行为mapper层
  *   版本:1.0
- *   作者:wka
  */
 @Mapper
 public interface UserMapper {

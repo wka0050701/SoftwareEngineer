@@ -5,7 +5,6 @@ import com.example.softwareEngineer.DTO.User;
 /**
  * 用户行为接口层
  *   版本:1.0
- *   作者:wka
  */
 public interface UserService {
     //id查询函数

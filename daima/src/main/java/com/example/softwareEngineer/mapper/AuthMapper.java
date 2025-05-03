@@ -9,7 +9,6 @@ import org.apache.ibatis.annotations.Select;
 /**
  * 登录注册mapper层
  *   版本:1.0
- *   作者:wka
  */
 @Mapper
 public interface AuthMapper {

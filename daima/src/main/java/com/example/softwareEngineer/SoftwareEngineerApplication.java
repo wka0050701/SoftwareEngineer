@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 启动类
+ * version:1.0
  */
 @SpringBootApplication
 public class SoftwareEngineerApplication {

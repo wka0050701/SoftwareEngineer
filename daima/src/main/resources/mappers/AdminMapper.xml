@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.softwareEngineer.mapper.AdminMapper">
+    <insert id="insert" parameterType="com.example.softwareEngineer.DTO.Product">
+        INSERT INTO products(category_id, name, price, description, stock, status)
+        VALUES(#{categoryId}, #{name}, #{price}, #{description}, #{stock}, #{status})
+    </insert>
+
+    <delete id="deleteById">
+        DELETE FROM products WHERE product_id = #{productId}
+    </delete>
+
+    <update id="updateProduct" parameterType="com.example.softwareEngineer.DTO.Product">
+        UPDATE products SET
+                            category_id = #{categoryId},
+                            name = #{name},
+                            price = #{price},
+                            description = #{description},
+                            stock = #{stock},
+                            status = #{status}
+        WHERE product_id = #{productId}
+    </update>
+    <update id="updateAdminInfo" parameterType="com.example.softwareEngineer.DTO.Admin">
+        UPDATE shop_info SET
+                             name = #{name},
+                             description = #{description},
+                             phone = #{phone},
+                             address = #{address},
+                             business_hours = #{businessHours},
+                             min_order = #{minOrder},
+                             delivery_fee = #{deliveryFee},
+                             status = #{status}
+        WHERE shop_id = #{id}
+    </update>
+
+    <select id="selectList" resultType="com.example.softwareEngineer.DTO.Product">
+        SELECT * FROM products
+        <where>
+            <if test="categoryId != null">
+                AND category_id = #{categoryId}
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
+        ORDER BY product_id DESC
+    </select>
+</mapper>

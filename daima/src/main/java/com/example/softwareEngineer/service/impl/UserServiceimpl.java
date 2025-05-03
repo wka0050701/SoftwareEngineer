@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 /**
  * 用户行为Service层
  *   版本:1.0
- *   作者:wka
  */
 @Service
 public class UserServiceimpl implements UserService {
