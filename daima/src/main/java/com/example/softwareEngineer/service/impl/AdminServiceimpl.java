@@ -2,13 +2,16 @@ package com.example.softwareEngineer.service.impl;
 
 import com.example.softwareEngineer.DTO.Admin;
 import com.example.softwareEngineer.DTO.Product;
+import com.example.softwareEngineer.Exception.BusinessException;
 import com.example.softwareEngineer.mapper.AdminMapper;
 import com.example.softwareEngineer.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 商家操作类
@@ -27,8 +30,11 @@ public class AdminServiceimpl implements AdminService {
     @Override
     @Transactional
     public void deleteProduct(Integer productId) {
-        // 这里可以添加业务逻辑，如检查菜品是否存在等
-        adminMapper.deleteById(productId);
+        if (adminMapper.existsByProductId(productId)) {
+            adminMapper.deleteProduct(productId);
+        }else{
+            throw new BusinessException("菜品不存在");
+        }
     }
     
     /**
@@ -37,8 +43,11 @@ public class AdminServiceimpl implements AdminService {
      */
     @Override
     public void addProduct(Product product) {
-        // 这里可以添加业务逻辑，如参数校验等
-        adminMapper.insert(product);
+        if (!adminMapper.existsByName(product.getName())) {
+            adminMapper.addProduct(product);
+        }else if (adminMapper.existsByName(product.getName())) {
+            throw new BusinessException("菜品名称「" + product.getName() + "」已存在，请更换名称后重试");
+        }
     }
     
     /**
@@ -47,7 +56,21 @@ public class AdminServiceimpl implements AdminService {
      */
     @Transactional
     public void updateProduct(Product product) {
-        // 这里可以添加业务逻辑，如参数校验等
+        // 检查productId是否存在
+        if (product.getProductId() == null) {
+            throw new BusinessException("修改菜品时必须提供productId");
+        }
+
+        // 检查菜品是否存在
+        if (!adminMapper.existsByProductId(product.getProductId())) {
+            throw new BusinessException("菜品不存在，无法修改");
+        }
+
+        // 执行更新
+        int rows = adminMapper.updateProduct(product);
+        if (rows == 0) {
+            throw new BusinessException("菜品更新失败，请检查参数");
+        }
         adminMapper.updateProduct(product);
     }
     
@@ -62,7 +85,7 @@ public class AdminServiceimpl implements AdminService {
         if (admin.getPhone() != null && !admin.getPhone().matches("^1[3-9]\\d{9}$")) {
             throw new IllegalArgumentException("手机号格式不正确");
         }
-        adminMapper.updateAdminInfo(admin);
+        adminMapper.updateShopInfo(admin);
     }
     
     /**
@@ -72,8 +95,33 @@ public class AdminServiceimpl implements AdminService {
      * @return
      */
     @Override
-    public List<Product> listProducts(Integer categoryId, Integer status) {
-        return adminMapper.selectList(categoryId, status);
+    public List<Product> listProducts(Integer categoryId, Integer status,
+                                      Integer pageNum, Integer pageSize) {
+        int offset = (pageNum - 1) * pageSize;
+        return adminMapper.getProductList(categoryId, status,offset, pageSize);
+    }
+
+
+
+    @Override
+    public Map<String, Object> listProductsWithPageInfo(
+            Integer categoryId, Integer status, Integer pageNum, Integer pageSize) {
+
+        int offset = (pageNum - 1) * pageSize;
+        List<Product> products = adminMapper.getProductList(categoryId, status, offset, pageSize);
+
+        // 查询总记录数
+        long total = adminMapper.countProducts(categoryId, status);
+        int pages = (int) Math.ceil((double) total / pageSize);
+
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("list", products);
+        result.put("total", total);
+        result.put("pageNum", pageNum);
+        result.put("pageSize", pageSize);
+        result.put("pages", pages);
+
+        return result;
     }
     
 }

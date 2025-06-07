@@ -7,10 +7,10 @@ import com.example.softwareEngineer.DTO.User;
  *   版本:1.0
  */
 public interface UserService {
+
     //id查询函数
     User getUserById(int id);
     //id更新用户内容
     boolean updateUser(User user);
-    
 
 }

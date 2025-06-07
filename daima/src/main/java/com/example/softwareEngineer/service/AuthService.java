@@ -12,4 +12,9 @@ public interface AuthService {
     int login(String phone, String password);
     //注册函数
     int register(User user);
+    //找回密码
+    int resetPassword(String phone, String password);
+    //手机号查重
+    boolean checkPhoneExist(String phone);
+
 }

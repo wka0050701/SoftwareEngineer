@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Admin {
-    private Integer id; // 商家ID，通常从登录信息获取
+    private Integer shopId; // 商家ID，通常从登录信息获取
     private String name;
     private String description;
     private String phone;

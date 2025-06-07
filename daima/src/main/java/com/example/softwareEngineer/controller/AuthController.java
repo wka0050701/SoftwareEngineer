@@ -8,8 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import utils.JwtUtils;
+import utils.MD5Utils;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -35,24 +39,37 @@ public class AuthController  {
         log.info("用户登录");
         // 1. 参数校验
         // 验证手机号格式（11位数字）
+
         if (!Pattern.matches("^\\d{11}$", phone)) {
             return Result.error("手机号必须为11位数字");
         }
-        
+
         // 验证密码非空
         if (password == null || password.trim().isEmpty()) {
             return Result.error("密码不能为空");
         }
+
+        String encryptedPhone = MD5Utils.encrypt(phone);
+        String encryptedPassword = MD5Utils.encrypt(password);
+
+        log.info("登录密码原始值: {}", password);
+        log.info("登录密码加密后: {}", encryptedPassword);
         //获取用户id
-        int userId=authService.login(phone,password);
+        int userId=authService.login(encryptedPhone,encryptedPassword);
         //返回数据
         if (userId != 0) {
-            Map<String, Object> data = new HashMap<>();
-            data.put("user_id", userId);
-            return Result.success(data);
+            // 生成 JWT（保持不变）
+            String jwt = JwtUtils.generateJwt(Collections.singletonMap("user_id", userId));
+
+            // 构建嵌套的数据结构
+            Map<String, Object> loginData = new LinkedHashMap<>();
+            loginData.put("id", userId);
+            loginData.put("jwt", jwt);
+
+            // 将嵌套结构放入 Result 的 data 字段
+            return Result.success(loginData);
         }
-        return Result.error("注册失败");
-        
+        return Result.error("认证失败");
     }
     
     /**
@@ -63,15 +80,22 @@ public class AuthController  {
     @PostMapping("/register")
     public Result register(@RequestBody User user) {
         log.info("用户注册");
+
+        String encryptedPhone = MD5Utils.encrypt(user.getPhone());
+        String encryptedPassword = MD5Utils.encrypt(user.getPassword());
+
         // 校验手机号11位
         if (!Pattern.matches("^\\d{11}$", user.getPhone())) {
             return Result.error("手机号必须为11位数字");
         }
-        
         // 校验密码
         if (user.getPassword() == null || user.getPassword().trim().isEmpty()) {
             return Result.error("密码不能为空");
         }
+
+        user.setPhone(encryptedPhone);
+        user.setPassword(encryptedPassword);
+
         //获取用户id
         int userId = authService.register(user);
         //返回数据
@@ -82,5 +106,13 @@ public class AuthController  {
         } else {
             return Result.error("注册失败");
         }
+    }
+
+    @GetMapping("/password")
+    public Result findPassword(@RequestParam("phone") String phone
+    , @RequestParam("newPassword") String newPassword) {
+        String encryptedNewPassword = MD5Utils.encrypt(newPassword);
+        authService.resetPassword(phone,encryptedNewPassword);
+        return Result.success();
     }
 }

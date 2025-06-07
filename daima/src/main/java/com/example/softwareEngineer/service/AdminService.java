@@ -5,6 +5,7 @@ import com.example.softwareEngineer.DTO.Admin;
 import com.example.softwareEngineer.DTO.Product;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 商家行为接口层
@@ -21,6 +22,6 @@ public interface AdminService {
     //更新商家信息
     void updateAdminInfo(Admin admin);
     //查询产品
-    List<Product> listProducts(Integer categoryId, Integer status);
-    
+    List<Product> listProducts(Integer categoryId, Integer status,Integer pageNum,Integer pageSize);
+    Map<String, Object> listProductsWithPageInfo(Integer categoryId, Integer status, Integer pageNum, Integer pageSize);
 }

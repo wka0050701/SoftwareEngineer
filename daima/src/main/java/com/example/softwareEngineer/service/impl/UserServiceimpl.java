@@ -23,7 +23,7 @@ public class UserServiceimpl implements UserService {
      */
     @Override
     public User getUserById(int id) {
-        return userMapper.findById(id);
+        return userMapper.getUserInfo(id);
     }
     
     /**
@@ -37,6 +37,6 @@ public class UserServiceimpl implements UserService {
         if (user.getPhone() == null || !user.getPhone().matches("^[0-9]{11}$")) {
             throw new IllegalArgumentException("手机号必须是11位数字");
         }
-        return userMapper.updateUser(user);
+        return userMapper.updateUserInfo(user) > 0;
     }
 }

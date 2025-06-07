@@ -1,7 +1,7 @@
 package com.example.softwareEngineer.mapper;
 
 import com.example.softwareEngineer.DTO.User;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.*;
 
 /**
  * 用户行为mapper层
@@ -9,8 +9,12 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper {
+
     //通过id查询用户信息
-    User findById(int id);
+    @Select("SELECT phone, nickname, default_address as defaultAddress FROM users WHERE user_id = #{userId}")
+    User getUserInfo(Integer userId);
+
     //更新用户信息
-    boolean updateUser(User user);
+    @Update("UPDATE users SET nickname=#{nickname}, default_address=#{defaultAddress} WHERE user_id=#{userId}")
+    int updateUserInfo(User user);
 }
