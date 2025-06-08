@@ -40,16 +40,17 @@ public interface AdminMapper {
     int updateProduct(Product product);
 
 
-    // 分页查询菜品列表（纯SQL版本）
+    // 分页查询（使用预编译参数，禁止拼接字段名）
     @Select("SELECT * FROM products " +
             "WHERE (#{categoryId} IS NULL OR category_id = #{categoryId}) " +
             "AND (#{status} IS NULL OR status = #{status}) " +
-            "ORDER BY product_id DESC " +
+            "ORDER BY #{orderBy} " + // 由Controller层保证orderby参数合法（如price ASC）
             "LIMIT #{offset}, #{pageSize}")
     List<Product> getProductList(@Param("categoryId") Integer categoryId,
                                  @Param("status") Integer status,
                                  @Param("offset") Integer offset,
-                                 @Param("pageSize") Integer pageSize);
+                                 @Param("pageSize") Integer pageSize,
+                                 @Param("orderBy") String orderBy);
 
     @Select("SELECT COUNT(1) FROM products " +
             "WHERE (#{categoryId} IS NULL OR category_id = #{categoryId}) " +

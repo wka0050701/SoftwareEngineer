@@ -30,29 +30,26 @@ public class AuthController  {
     
     /**
      * 用户登录
-     * @param phone
-     * @param password
-     * @return
      */
     @PostMapping("/login")
-    public Result login(@RequestParam("phone") String phone, @RequestParam("password") String password) {
+    public Result login(@RequestBody User user) {
         log.info("用户登录");
         // 1. 参数校验
         // 验证手机号格式（11位数字）
 
-        if (!Pattern.matches("^\\d{11}$", phone)) {
+        if (!Pattern.matches("^\\d{11}$", user.getPhone())) {
             return Result.error("手机号必须为11位数字");
         }
 
         // 验证密码非空
-        if (password == null || password.trim().isEmpty()) {
+        if (user.getPassword() == null || user.getPassword().trim().isEmpty()) {
             return Result.error("密码不能为空");
         }
 
-        String encryptedPhone = MD5Utils.encrypt(phone);
-        String encryptedPassword = MD5Utils.encrypt(password);
+        String encryptedPhone = MD5Utils.encrypt(user.getPhone());
+        String encryptedPassword = MD5Utils.encrypt(user.getPassword());
 
-        log.info("登录密码原始值: {}", password);
+        log.info("登录密码原始值: {}", user.getPhone());
         log.info("登录密码加密后: {}", encryptedPassword);
         //获取用户id
         int userId=authService.login(encryptedPhone,encryptedPassword);
@@ -63,7 +60,7 @@ public class AuthController  {
 
             // 构建嵌套的数据结构
             Map<String, Object> loginData = new LinkedHashMap<>();
-            loginData.put("id", userId);
+            loginData.put("userId", userId);
             loginData.put("jwt", jwt);
 
             // 将嵌套结构放入 Result 的 data 字段
@@ -108,11 +105,12 @@ public class AuthController  {
         }
     }
 
-    @GetMapping("/password")
-    public Result findPassword(@RequestParam("phone") String phone
-    , @RequestParam("newPassword") String newPassword) {
+    @PostMapping("/password")
+    public Result findPassword(@RequestBody User user) {
+        String encryptedPhone = MD5Utils.encrypt(user.getPhone());
+        String newPassword = user.getPassword();
         String encryptedNewPassword = MD5Utils.encrypt(newPassword);
-        authService.resetPassword(phone,encryptedNewPassword);
+        authService.resetPassword(encryptedPhone,encryptedNewPassword);
         return Result.success();
     }
 }

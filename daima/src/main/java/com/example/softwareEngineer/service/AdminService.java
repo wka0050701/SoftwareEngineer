@@ -22,6 +22,5 @@ public interface AdminService {
     //更新商家信息
     void updateAdminInfo(Admin admin);
     //查询产品
-    List<Product> listProducts(Integer categoryId, Integer status,Integer pageNum,Integer pageSize);
-    Map<String, Object> listProductsWithPageInfo(Integer categoryId, Integer status, Integer pageNum, Integer pageSize);
+    Map<String, Object> listProductsWithPageInfo(Integer categoryId, Integer status, Integer pageNum, Integer pageSize,String OrderBy);
 }

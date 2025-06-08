@@ -1,6 +1,7 @@
 package com.example.softwareEngineer.service.impl;
 
 import com.example.softwareEngineer.DTO.Admin;
+import com.example.softwareEngineer.DTO.Order;
 import com.example.softwareEngineer.DTO.Product;
 import com.example.softwareEngineer.Exception.BusinessException;
 import com.example.softwareEngineer.mapper.AdminMapper;
@@ -94,33 +95,31 @@ public class AdminServiceimpl implements AdminService {
      * @param status
      * @return
      */
+
+    // 修改后（通过pageNum和pageSize计算offset）
     @Override
-    public List<Product> listProducts(Integer categoryId, Integer status,
-                                      Integer pageNum, Integer pageSize) {
+    public Map<String, Object> listProductsWithPageInfo(Integer categoryId, Integer status,
+                                                        Integer pageNum, Integer pageSize,
+                                                        String orderBy) {
+        // 计算偏移量（无需再从Controller传递offset）
         int offset = (pageNum - 1) * pageSize;
-        return adminMapper.getProductList(categoryId, status,offset, pageSize);
-    }
 
+        // 查询数据列表（直接传递pageNum、pageSize，MyBatis中使用offset和pageSize）
+        List<Product> products = adminMapper.getProductList(
+                categoryId, status, offset, pageSize, orderBy
+        );
 
-
-    @Override
-    public Map<String, Object> listProductsWithPageInfo(
-            Integer categoryId, Integer status, Integer pageNum, Integer pageSize) {
-
-        int offset = (pageNum - 1) * pageSize;
-        List<Product> products = adminMapper.getProductList(categoryId, status, offset, pageSize);
-
-        // 查询总记录数
+        // 查询总数
         long total = adminMapper.countProducts(categoryId, status);
         int pages = (int) Math.ceil((double) total / pageSize);
 
+        // 封装结果
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("list", products);
         result.put("total", total);
         result.put("pageNum", pageNum);
         result.put("pageSize", pageSize);
         result.put("pages", pages);
-
         return result;
     }
     
