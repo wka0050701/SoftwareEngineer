@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.softwareEngineer.mapper.UserMapper">
+    <!-- 更新用户信息 -->
+    <update id="updateUser" parameterType="com.example.softwareEngineer.DTO.User">
+        UPDATE users
+        SET
+            phone = #{phone},
+            password = #{password},
+            nickname = #{nickname},
+            default_address = #{defaultAddress}
+        WHERE user_id = #{userId}
+    </update>
+    <select id="findById" resultType="com.example.softwareEngineer.DTO.User">
+        SELECT user_id AS userId, phone, password, nickname, default_address AS defaultAddress
+        FROM users
+        WHERE user_id = #{id}
+    </select>
+
+</mapper>
