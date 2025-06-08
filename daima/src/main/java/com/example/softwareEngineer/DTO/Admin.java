@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 /**
  * 商家类
  * version:1.0
@@ -19,6 +21,6 @@ public class Admin {
     private String address;
     private String businessHours;
     private Integer minOrder;
-    private Integer deliveryFee;
+    private BigDecimal deliveryFee;
     private Integer status;
 }

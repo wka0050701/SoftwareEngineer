@@ -2,6 +2,7 @@ package com.example.softwareEngineer.service;
 
 
 import com.example.softwareEngineer.DTO.Admin;
+import com.example.softwareEngineer.DTO.Order;
 import com.example.softwareEngineer.DTO.Product;
 
 import java.util.List;
@@ -13,6 +14,11 @@ import java.util.Map;
  */
 
 public interface AdminService {
+    //根据菜品id查菜品
+    Product getProductById(Integer productId) ;
+
+    Admin getAdmin(Integer adminId) ;
+
     //删除产品
     void deleteProduct(Integer productId);
     //添加产品
@@ -23,4 +29,6 @@ public interface AdminService {
     void updateAdminInfo(Admin admin);
     //查询产品
     Map<String, Object> listProductsWithPageInfo(Integer categoryId, Integer status, Integer pageNum, Integer pageSize,String OrderBy);
+    //同步到Order
+    void changeOrder(Order order);
 }

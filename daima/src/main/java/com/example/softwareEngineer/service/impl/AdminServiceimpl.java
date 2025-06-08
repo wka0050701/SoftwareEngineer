@@ -23,7 +23,21 @@ public class AdminServiceimpl implements AdminService {
     
     @Autowired
     private AdminMapper adminMapper;
-    
+
+    @Override
+    public Product getProductById(Integer productId) {
+        if (productId == null) {
+            throw new IllegalArgumentException("菜品ID不能为空");
+        }
+
+        Product product = adminMapper.getProductById(productId);
+        if (product == null) {
+            throw new BusinessException("菜品不存在，ID: " + productId);
+        }
+
+        return product;
+    }
+
     /**
      * 删除产品
      * @param productId
@@ -121,6 +135,16 @@ public class AdminServiceimpl implements AdminService {
         result.put("pageSize", pageSize);
         result.put("pages", pages);
         return result;
+    }
+
+    @Override
+    public Admin getAdmin(Integer adminId) {
+        return adminMapper.getAdmin(adminId);
+    }
+
+    @Override
+    public void changeOrder(Order order) {
+        adminMapper.changeOrder(order);
     }
     
 }

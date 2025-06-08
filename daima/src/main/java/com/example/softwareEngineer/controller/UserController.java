@@ -33,7 +33,7 @@ public class UserController {
      */
     @GetMapping("/query")
     public Result getUserInfo(@RequestParam("id") int id,
-                              @RequestParam("Authorization") String jwt) {
+                              @RequestHeader(value = "Authorization",required = false) String jwt) {
         log.info("用户查询");
         try {
             Claims claims = JwtUtils.parseJWT(jwt);

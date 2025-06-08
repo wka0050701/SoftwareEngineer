@@ -50,7 +50,7 @@ public class AdminController {
     // 排序处理方法（封装业务逻辑）
     private String handleSort(String sortField, Integer sortOrder) {
         // 排序字段白名单（使用枚举或常量列表）
-        List<String> validFields = Arrays.asList("price", "stock", "name", "status", "productId");
+        List<String> validFields = Arrays.asList("price", "stock", "name", "status", "product_id");
         if (sortField == null) {
             return "product_id DESC"; // 默认按ID降序
         }

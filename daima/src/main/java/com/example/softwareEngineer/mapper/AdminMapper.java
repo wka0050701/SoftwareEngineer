@@ -1,6 +1,7 @@
 package com.example.softwareEngineer.mapper;
 
 import com.example.softwareEngineer.DTO.Admin;
+import com.example.softwareEngineer.DTO.Order;
 import com.example.softwareEngineer.DTO.Product;
 import org.apache.ibatis.annotations.*;
 
@@ -15,6 +16,11 @@ public interface AdminMapper {
     //删除菜品
     @Delete("delete from products where product_id = #{productId}")
     void deleteProduct(Integer productId);
+
+    @Select("select shop_id, name,description, business_hours,address,delivery_fee, status, created_at " +
+            "FROM shop_info " +
+            "WHERE shop_id = #{shopId}")
+    Admin getAdmin(Integer shopId);
 
     /**
      * 检查菜品名称是否存在
@@ -44,7 +50,7 @@ public interface AdminMapper {
     @Select("SELECT * FROM products " +
             "WHERE (#{categoryId} IS NULL OR category_id = #{categoryId}) " +
             "AND (#{status} IS NULL OR status = #{status}) " +
-            "ORDER BY #{orderBy} " + // 由Controller层保证orderby参数合法（如price ASC）
+            "ORDER BY ${orderBy}  " + // 由Controller层保证orderby参数合法（如price ASC）
             "LIMIT #{offset}, #{pageSize}")
     List<Product> getProductList(@Param("categoryId") Integer categoryId,
                                  @Param("status") Integer status,
@@ -64,4 +70,13 @@ public interface AdminMapper {
             "delivery_fee=#{deliveryFee},status=#{status} WHERE shop_id=#{shopId}")
     int updateShopInfo(Admin admin);
 
+
+    @Select("SELECT product_id,category_id, name, price, stock,status, description, created_at " +
+            "FROM products " +
+            "WHERE product_id = #{productId}")
+    Product getProductById(Integer productId);
+
+
+    @Update("UPDATE orders set total_amount = #{totalAmount}, actual_amount = #{actualAmount},delivery_fee=#{deliveryFee} where order_id = #{orderId}")
+    void changeOrder(Order order);
 }
