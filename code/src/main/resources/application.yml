@@ -14,7 +14,8 @@ mybatis:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mappers/*.xml
   type-aliases-package: com.example.softwareEngineer.entity
-
+server:
+  port: 8080
 #spring事务日志管理
 logging:
   level:

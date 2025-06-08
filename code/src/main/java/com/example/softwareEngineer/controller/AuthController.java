@@ -23,36 +23,16 @@ public class AuthController  {
     private static final Logger log = LoggerFactory.getLogger(AuthController.class);
     @Autowired
     private AuthService authService;
-    
-    /**
-     * 用户登录
-     * @param phone
-     * @param password
-     * @return
-     */
+
     @PostMapping("/login")
-    public Result login(@RequestParam("phone") String phone, @RequestParam("password") String password) {
+    public Result login(@RequestBody User user) {
         log.info("用户登录");
         // 1. 参数校验
         // 验证手机号格式（11位数字）
-        if (!Pattern.matches("^\\d{11}$", phone)) {
-            return Result.error("手机号必须为11位数字");
-        }
-        
-        // 验证密码非空
-        if (password == null || password.trim().isEmpty()) {
-            return Result.error("密码不能为空");
-        }
-        //获取用户id
-        int userId=authService.login(phone,password);
-        //返回数据
-        if (userId != 0) {
-            Map<String, Object> data = new HashMap<>();
-            data.put("user_id", userId);
-            return Result.success(data);
-        }
-        return Result.error("注册失败");
-        
+        Map<String, Object> data = new HashMap<>();
+        data.put("userId",1);
+        data.put("jwt","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNzM1Njg5NjAwLCJleHAiOjE3MzU3NzYwMDB9.7vfJz7Z6w7z6Jz6w7z6Jz6w7z6Jz6w7z6Jz6w7z6Jz6");
+        return Result.success(data);
     }
     
     /**
@@ -72,15 +52,9 @@ public class AuthController  {
         if (user.getPassword() == null || user.getPassword().trim().isEmpty()) {
             return Result.error("密码不能为空");
         }
-        //获取用户id
-        int userId = authService.register(user);
-        //返回数据
-        if (userId != 0) {
-            Map<String, Object> data = new HashMap<>();
-            data.put("user_id", userId);
-            return Result.success(data);
-        } else {
-            return Result.error("注册失败");
-        }
+        Map<String, Object> data = new HashMap<>();
+        data.put("userId", 1);
+        data.put("jwt","jwt令牌");
+        return Result.success(1);
     }
 }
