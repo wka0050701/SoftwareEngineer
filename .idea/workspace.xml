@@ -4,19 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="015c40d7-b08e-4b17-8405-3176f4b82c65" name="更改" comment="" />
+    <list default="true" id="3c4c0712-8f94-4af3-95ad-bc848ec65c42" name="更改" comment="订单前2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;F1urthermore&quot;
+  }
 }</component>
-  <component name="ProjectId" id="2yB7c1q0zyqpdzZZOrF0UMYYsdg" />
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/wka0050701/SoftwareEngineer.git&quot;,
+    &quot;accountId&quot;: &quot;9f74c94f-6195-4f2d-a4ec-b120b94bd3ca&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2xuthLLs94X5M8KquSnBLI7hKYS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,58 +53,114 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.SoftwareEngineerApplication.executor": "Run",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/project/frontend/daima",
+    "last_opened_file_path": "D:/修图/springboot-mybatis-crud",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
+      "MySQL"
+    ]
   }
 }]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="frontend" />
+      <module name="SoftwareEngineer" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="frontend" />
+      <module name="SoftwareEngineer" />
       <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="逻辑" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="015c40d7-b08e-4b17-8405-3176f4b82c65" name="更改" comment="" />
-      <created>1749296188531</created>
+      <changelist id="3c4c0712-8f94-4af3-95ad-bc848ec65c42" name="更改" comment="" />
+      <created>1748799903164</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1749296188531</updated>
-      <workItem from="1749296189589" duration="4638000" />
-      <workItem from="1749358899252" duration="4834000" />
-      <workItem from="1749364331841" duration="37000" />
-      <workItem from="1749364445004" duration="88000" />
-      <workItem from="1749365287240" duration="27000" />
+      <updated>1748799903164</updated>
+      <workItem from="1748799904246" duration="2044000" />
+      <workItem from="1749029287073" duration="17560000" />
+      <workItem from="1749134183148" duration="39862000" />
+      <workItem from="1749302457543" duration="51115000" />
     </task>
+    <task id="LOCAL-00001" summary="订单前">
+      <option name="closed" value="true" />
+      <created>1749316245886</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749316245886</updated>
+    </task>
+    <task id="LOCAL-00002" summary="订单前2">
+      <option name="closed" value="true" />
+      <created>1749363685453</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749363685454</updated>
+    </task>
+    <task id="LOCAL-00003" summary="订单前2">
+      <option name="closed" value="true" />
+      <created>1749364673475</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749364673475</updated>
+    </task>
+    <task id="LOCAL-00004" summary="订单前2">
+      <option name="closed" value="true" />
+      <created>1749365168709</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749365168709</updated>
+    </task>
+    <task id="LOCAL-00005" summary="订单前2">
+      <option name="closed" value="true" />
+      <created>1749411937591</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749411937591</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="订单前" />
+    <MESSAGE value="订单前2" />
+    <option name="LAST_COMMIT_MESSAGE" value="订单前2" />
   </component>
 </project>

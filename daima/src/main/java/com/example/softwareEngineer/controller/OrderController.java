@@ -2,16 +2,14 @@ package com.example.softwareEngineer.controller;
 
 import com.example.softwareEngineer.DTO.Order;
 import com.example.softwareEngineer.DTO.OrderItem;
-import com.example.softwareEngineer.DTO.Product;
 import com.example.softwareEngineer.DTO.Result;
 import com.example.softwareEngineer.mapper.OrderMapper;
 import com.example.softwareEngineer.service.OrderService;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import utils.JwtUtils;
+import com.example.softwareEngineer.utils.JwtUtils;
 
 import java.util.Collections;
 import java.util.Map;
