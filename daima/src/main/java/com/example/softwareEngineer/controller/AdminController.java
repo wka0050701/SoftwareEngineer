@@ -5,6 +5,7 @@ import com.example.softwareEngineer.DTO.Admin;
 import com.example.softwareEngineer.DTO.Product;
 import com.example.softwareEngineer.DTO.Result;
 import com.example.softwareEngineer.service.AdminService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.Map;
  * 商家控制类
  * version:1.0
  */
+@Slf4j
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
@@ -26,8 +28,20 @@ public class AdminController {
     //添加菜品
     @PostMapping("/product")
     public Result addProduct(@RequestBody Product product) {
-        adminService.addProduct(product);
-        return Result.success();
+        try {
+            log.info("添加菜品: {}", product.getName());
+
+            // 检查菜品名称是否已存在
+            if (adminService.productExistsByName(product.getName())) {
+                return Result.error("菜品名称已存在");
+            }
+
+            adminService.addProduct(product);
+            return Result.success();
+        } catch (Exception e) {
+            log.error("添加菜品失败: {}", e.getMessage());
+            return Result.error("添加菜品失败: " + e.getMessage());
+        }
     }
 
     //删除菜品

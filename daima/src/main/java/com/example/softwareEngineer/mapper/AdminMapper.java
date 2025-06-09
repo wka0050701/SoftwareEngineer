@@ -34,10 +34,10 @@ public interface AdminMapper {
     boolean existsByProductId(@Param("productId") Integer productId);
 
     //添加菜品
-    @Insert("INSERT INTO products(category_id,name,price,description,stock,status) " +
-            "VALUES(#{categoryId},#{name},#{price},#{description},#{stock},#{status})")
+    @Insert("INSERT INTO products(category_id,name,price,description,stock,status,image) " +
+            "VALUES(#{categoryId},#{name},#{price},#{description},#{stock},#{status},#{image})")
     @Options(useGeneratedKeys = true, keyProperty = "productId")
-    int addProduct(Product product);
+    void addProduct(Product product);
 
     // 修改菜品
     @Update("UPDATE products SET category_id=#{categoryId},name=#{name},price=#{price}," +
@@ -68,7 +68,7 @@ public interface AdminMapper {
     @Update("UPDATE shop_info SET name=#{name},description=#{description},phone=#{phone}," +
             "address=#{address},business_hours=#{businessHours},min_order=#{minOrder}," +
             "delivery_fee=#{deliveryFee},status=#{status} WHERE shop_id=#{shopId}")
-    int updateShopInfo(Admin admin);
+    void updateShopInfo(Admin admin);
 
 
     @Select("SELECT product_id,category_id, name, price, stock,status, description, created_at " +

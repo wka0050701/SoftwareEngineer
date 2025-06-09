@@ -5,7 +5,6 @@ import com.example.softwareEngineer.DTO.Admin;
 import com.example.softwareEngineer.DTO.Order;
 import com.example.softwareEngineer.DTO.Product;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,4 +30,6 @@ public interface AdminService {
     Map<String, Object> listProductsWithPageInfo(Integer categoryId, Integer status, Integer pageNum, Integer pageSize,String OrderBy);
     //同步到Order
     void changeOrder(Order order);
+
+    boolean productExistsByName(String name);
 }

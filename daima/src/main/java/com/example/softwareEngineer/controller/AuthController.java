@@ -3,6 +3,7 @@ package com.example.softwareEngineer.controller;
 
 import com.example.softwareEngineer.DTO.Result;
 import com.example.softwareEngineer.DTO.User;
+import com.example.softwareEngineer.Exception.BusinessException;
 import com.example.softwareEngineer.service.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,6 +79,10 @@ public class AuthController  {
     public Result register(@RequestBody User user) {
         log.info("用户注册");
 
+        if (authService.isPhoneRegistered(user.getPhone())) {
+            return Result.error("该手机号已注册");
+        }
+
         String encryptedPhone = MD5Utils.encrypt(user.getPhone());
         String encryptedPassword = MD5Utils.encrypt(user.getPassword());
 
@@ -107,10 +112,34 @@ public class AuthController  {
 
     @PostMapping("/password")
     public Result findPassword(@RequestBody User user) {
+
+        // 1. 参数校验
+        // 验证手机号格式（11位数字）
+        if (!Pattern.matches("^\\d{11}$", user.getPhone())) {
+            return Result.error("手机号必须为11位数字");
+        }
+
+        // 验证新密码非空
+        if (user.getPassword() == null || user.getPassword().trim().isEmpty()) {
+            return Result.error("新密码不能为空");
+        }
+
+        // 加密处理
         String encryptedPhone = MD5Utils.encrypt(user.getPhone());
-        String newPassword = user.getPassword();
-        String encryptedNewPassword = MD5Utils.encrypt(newPassword);
-        authService.resetPassword(encryptedPhone,encryptedNewPassword);
-        return Result.success();
+        String encryptedNewPassword = MD5Utils.encrypt(user.getPassword());
+
+        // 2. 检查新旧密码是否相同
+        try {
+            User existingUser = authService.findByPhone(encryptedPhone);
+            if (existingUser != null && existingUser.getPassword().equals(encryptedNewPassword)) {
+                return Result.error("新密码不能与原密码相同");
+            }
+
+            // 3. 执行密码重置
+            authService.resetPassword(encryptedPhone, encryptedNewPassword);
+            return Result.success();
+        } catch (BusinessException e) {
+            return Result.error(e.getMessage());
+        }
     }
 }

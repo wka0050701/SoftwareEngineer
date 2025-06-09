@@ -10,8 +10,4 @@ public class GlobalExceptionHandler {
     public Result handleBusinessException(BusinessException e) {
         return Result.error(e.getMessage());
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 25c6dd8e7beb289168a3cf06a3c2467eda40bf99

@@ -1,6 +1,5 @@
 package com.example.softwareEngineer.service;
 
-import com.example.softwareEngineer.DTO.Result;
 import com.example.softwareEngineer.DTO.User;
 
 /**
@@ -13,8 +12,10 @@ public interface AuthService {
     //注册函数
     int register(User user);
     //找回密码
-    int resetPassword(String phone, String password);
-    //手机号查重
-    boolean checkPhoneExist(String phone);
+    void resetPassword(String phone, String password);
 
+    //检测该手机号是否已注册
+    boolean isPhoneRegistered(String phone);
+
+    User findByPhone(String encryptedPhone);
 }

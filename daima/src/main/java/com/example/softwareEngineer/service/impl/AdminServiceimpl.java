@@ -9,6 +9,7 @@ import com.example.softwareEngineer.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -44,7 +45,7 @@ public class AdminServiceimpl implements AdminService {
      */
     @Override
     @Transactional
-    public void deleteProduct(Integer productId) {
+    public void deleteProduct( Integer productId) {
         if (adminMapper.existsByProductId(productId)) {
             adminMapper.deleteProduct(productId);
         }else{
@@ -146,5 +147,10 @@ public class AdminServiceimpl implements AdminService {
     public void changeOrder(Order order) {
         adminMapper.changeOrder(order);
     }
-    
+
+    @Override
+    public boolean productExistsByName(String name) {
+        return adminMapper.existsByName(name);
+    }
+
 }
