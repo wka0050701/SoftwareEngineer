@@ -4,7 +4,90 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c4c0712-8f94-4af3-95ad-bc848ec65c42" name="更改" comment="订单前2" />
+    <list default="true" id="3c4c0712-8f94-4af3-95ad-bc848ec65c42" name="更改" comment="订单前2">
+      <change beforePath="$PROJECT_DIR$/code/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/DTO/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/DTO/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/DTO/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/DTO/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/SoftwareEngineerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/mapper/AdminMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/mapper/AuthMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/service/impl/AdminServiceimpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/service/impl/AuthServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/example/softwareEngineer/service/impl/UserServiceimpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/resources/mappers/AdminMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/resources/mappers/AuthMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/resources/mappers/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/test/java/com/example/softwareEngineer/SoftwareEngineerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/src/components/AuthForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/src/pages/LoginPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/src/pages/RegisterPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/ui/src/pages/UserDashboardPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/Config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/DTO/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/DTO/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/DTO/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/DTO/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/DTO/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/DTO/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/DTO/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/Exception/BusinessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/Exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/OrderStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/SoftwareEngineerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/controller/ReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/mapper/AdminMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/mapper/AuthMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/mapper/OrderItemMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/mapper/OrderMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/mapper/ReviewMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/ReviewService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/impl/AdminServiceimpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/impl/AuthServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/impl/OrderServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/impl/ReviewServiceimpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/service/impl/UserServiceimpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/utils/JwtUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/java/com/example/softwareEngineer/utils/MD5Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/daima/src/test/java/com/example/softwareEngineer/SoftwareEngineerApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,36 +126,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.SoftwareEngineerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/javaWork/SoftwareEngineer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.SoftwareEngineerApplication.executor": "Run",
+    "git-widget-placeholder": "正在合并 dev",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/javaWork/SoftwareEngineer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\javaWork\SoftwareEngineer" />
@@ -121,7 +204,7 @@
       <workItem from="1749302457543" duration="51115000" />
       <workItem from="1749470467578" duration="617000" />
       <workItem from="1749478031528" duration="22000" />
-      <workItem from="1749478754066" duration="1615000" />
+      <workItem from="1749478754066" duration="1961000" />
     </task>
     <task id="LOCAL-00001" summary="订单前">
       <option name="closed" value="true" />
